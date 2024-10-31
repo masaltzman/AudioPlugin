@@ -1,0 +1,29 @@
+# Ignore only workspace settings and other temporary files in .vscode
+.vscode/*.workspace
+.vscode/*.tmp
+# Ignore folders beginning with "build"
+build*/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore compiled binary files
+*.o
+*.obj
+*.dll
+*.exe
+*.out
+*.app
+
+# Ignore any temporary files
+*.log
+*.tmp
+*.temp
+
+# Ignore CMake cache and generated files
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+
+# Ignore JUCE-related generated folders and files (if any)
+*.jucer

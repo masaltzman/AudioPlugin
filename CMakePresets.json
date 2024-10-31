@@ -1,0 +1,55 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 19,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "macos",
+            "hidden": false,
+            "generator": "Xcode",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_OSX_SYSROOT": "macosx",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CXX_COMPILER": "/usr/bin/clang++",
+                "CMAKE_C_COMPILER": "/usr/bin/clang"
+            }
+        },
+        {
+            "name": "ios-simulator",
+            "hidden": false,
+            "generator": "Xcode",
+            "binaryDir": "${sourceDir}/build-ios-simulator",
+            "cacheVariables": {
+                "CMAKE_SYSTEM_NAME": "iOS",
+                "CMAKE_OSX_SYSROOT": "iphonesimulator",
+                "CMAKE_OSX_ARCHITECTURES": "x86_64;arm64"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "macos-debug",
+            "configurePreset": "macos",
+            "configuration": "Debug"
+        },
+        {
+            "name": "macos-release",
+            "configurePreset": "macos",
+            "configuration": "Release"
+        },
+        {
+            "name": "ios-simulator-debug",
+            "configurePreset": "ios-simulator",
+            "configuration": "Debug"
+        },
+        {
+            "name": "ios-simulator-release",
+            "configurePreset": "ios-simulator",
+            "configuration": "Release"
+        }
+    ]
+}
